@@ -16,18 +16,14 @@ const responseHandler = async (req, res, code, error, message) => {
         if (error) {
             res.status(code).send({ error: error.toString() });
         } else if (message) {
-         
-            (typeof message === 'string')? res.status(code).send({ message: message }) : res.status(code).send({ message })
-        
+            typeof message === 'string'
+                ? res.status(code).send({ message: message })
+                : res.status(code).send({ message });
         } else if (errorResponses[code]) {
-
             res.status(code).send({ error: errorResponses[code] });
-
         } else if (messageResponses[code]) {
-
             res.status(code).send({ message: messageResponses[code] });
         } else {
-            
             res.status(code).send();
         }
         throw new Error();

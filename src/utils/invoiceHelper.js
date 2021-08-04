@@ -7,23 +7,20 @@ const processProductsArray = (products) => {
 };
 
 const processInvoice = (invoice) => {
-    invoice.products = invoice.products.map((product) => {
-        product.total = product.price + product.tax;
-        return product;
+    invoice = JSON.parse(JSON.stringify(invoice));
+    invoice.products.map((product) => {
+        product.total = product['price'] + product['tax'];
+        //return product;
     });
-    console.log(invoice.products);
-
-    invoice.totalPrice = 0;
-    invoice.totalTax = 0;
+    invoice['totalPrice'] = 0;
+    invoice['totalTax'] = 0;
 
     //product.totalAmount = 0;
     invoice.products.forEach((product) => {
-        invoice.totalPrice += product.price;
-        invoice.totalTax += product.tax;
+        invoice['totalPrice'] += product['price'];
+        invoice['totalTax'] += product['tax'];
     });
-    console.log(invoice.totalPrice, invoice.totalTax);
-    invoice.totalAmount = invoice.totalPrice + invoice.totalTax;
-    console.log(invoice);
+    invoice['totalAmount'] = invoice['totalPrice'] + invoice['totalTax'];
     return invoice;
 };
 
