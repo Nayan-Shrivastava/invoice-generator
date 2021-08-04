@@ -33,28 +33,6 @@ const pdfHandler = async (invoice) => {
 	);
 };
 
-// const pdfHandler = async (invoice) => {
-// 	console.log(invoice);
-// 	let options = {
-// 		"height": "11.25in",
-// 		"width": "8.5in",
-// 		"header": {
-// 			"height": "20mm"
-// 		},
-// 		"footer": {
-// 			"height": "20mm",
-// 		},
-// 	};
-// 	try {
-// 		const data = await ejs.renderFile(path.join(__dirname, '../views/', "invoice-template.ejs"), { invoice })
-// 		const buffer = await pdf.create(data, options).toBuffer();
-// 		const bufferedPdf = await buffer.toString('base64');
-// 		return bufferedPdf;
-// 	} catch (e) {
-// 		throw e;
-// 	}
-
-// }
 
 module.exports = {
 	pdfHandler

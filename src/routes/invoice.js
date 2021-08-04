@@ -13,6 +13,7 @@ const {
     processProductsArray,
     processInvoice
 } = require('../utils/invoiceHelper');
+const { logger } = require("../logger/logger");
 const {
     errorResponses,
     messageResponses,
@@ -24,6 +25,7 @@ router.post(
     auth,
     hasRole([Role.Superadmin, Role.Admin, Role.Cashier]),
     async (req, res) => {
+
         try {
             req.body.products = processProductsArray(req.body.products);
             const invoice = new Invoice({
@@ -113,13 +115,14 @@ router.get(
                 totalAmount
             });
         } catch (e) {
-            console.log(e);
+            
             responseHandler(req, res, 500);
         }
     }
 );
 
 router.get('/get/:id', auth, hasRole([]), async (req, res) => {
+    //console.log(req);
     try {
         const id = req.params.id;
         const invoice = await Invoice.findById(id);
@@ -133,7 +136,7 @@ router.get('/get/:id', auth, hasRole([]), async (req, res) => {
             invoice: processInvoice(invoice)
         });
     } catch (e) {
-        responseHandler(req, res, 400, null, 'invalid invoice Id');
+        responseHandler(req, res, 400,'invalid invoice Id');
     }
 });
 
