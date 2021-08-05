@@ -1,0 +1,162 @@
+[
+	{
+		"name": "cashier 1",
+		"email": "cashier1@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "cashier"
+	},
+
+
+	{
+		"name": "cashier 2",
+		"email": "cashier2@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "cashier"
+	},
+
+
+
+
+	{
+		"name": "cashier 3",
+		"email": "cashier3@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "cashier"
+	},
+
+
+	//admins
+
+	{
+		"name": "admin 1",
+		"email": "admin1@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "admin"
+	},
+
+	{
+		"name": "admin 2",
+		"email": "admin2@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "admin"
+	},
+
+	{
+		"name": "admin 3",
+		"email": "admin3@gmail.com",
+		"password": "12345678",
+		"gender": "male",
+		"mobile": "0123456789",
+		"branch": "bhopal",
+		"role": "admin"
+	},
+
+
+//invoice
+
+
+	{
+		"name": "nayan",
+		"email": "nayanshrivastava900@gmail.com",
+		"gender": "male",
+		"mobile": "0123456789",
+		"shippingAddress": "mandideep, district Raisen, Madhya Pradesh",
+		"products": [
+			{
+				"productId": "1",
+				"title": "mobile",
+				"quantity": 2,
+				"price": 10000,
+				"tax": 1000
+
+			},
+			{
+				"productId": "2",
+				"title": "tv",
+				"quantity": 1,
+				"price": 20000,
+				"tax": 2000
+
+			}
+		]
+
+	},
+
+
+	{
+		"name": "harshit",
+		"email": "nayanshrivastava900@gmail.com",
+		"gender": "male",
+		"mobile": "0123456789",
+		"shippingAddress": "mandideep, district Raisen, Madhya Pradesh",
+		"products": [
+			{
+				"productId": "1",
+				"title": "mobile",
+				"quantity": 2,
+				"price": 10000,
+				"tax": 1000
+
+			},
+			{
+				"productId": "2",
+				"title": "tv",
+				"quantity": 1,
+				"price": 20000,
+				"tax": 2000
+
+			}
+		]
+
+	},
+
+
+
+	{
+		"name": "Abhijeet",
+		"email": "nayanshrivastava900@gmail.com",
+		"gender": "male",
+		"mobile": "0123456789",
+		"shippingAddress": "mandideep, district Raisen, Madhya Pradesh",
+		"products": [
+			{
+				"productId": "1",
+				"title": "mobile",
+				"quantity": 2,
+				"price": 10000,
+				"tax": 1000
+
+			},
+			{
+				"productId": "2",
+				"title": "tv",
+				"quantity": 1,
+				"price": 20000,
+				"tax": 2000
+
+			}
+		]
+
+	}
+
+
+
+]
+
+
+// Get-Content complete.log -Wait -Tail 30

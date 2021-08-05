@@ -140,20 +140,24 @@ router.get('/get/:id', auth, hasRole([]), async (req, res) => {
     }
 });
 
-router.post('/send-invoice-email', auth, hasRole([]), async (req, res) => {
+router.post('/send-invoice-email', auth, hasRole([Role.Superadmin, Role.Admin, Role.Cashier]), async (req, res) => {
     try {
         const id = req.body.invoiceId;
         const invoice = await Invoice.findById(id);
 
         if (!invoice) responseHandler(req, res, 404);
 
-        if (req.user.role === Role.Cashier && invoice.cashier !== req.user.role)
+        if (req.user.role === Role.Cashier && invoice.cashier.toString() !== req.user._id.toString()) {
+            console.log(invoice.cashier, req.user._id, req.user.role)
             responseHandler(req, res, 403);
+        }else{
+            pdfHandler(processInvoice(invoice));
+            responseHandler(req, res, 201, null, {
+                invoice: processInvoice(invoice)
+            });
+        }
 
-        pdfHandler(processInvoice(invoice));
-        responseHandler(req, res, 201, null, {
-            invoice: processInvoice(invoice)
-        });
+        
     } catch (e) {
         responseHandler(req, res, 400, e);
     }

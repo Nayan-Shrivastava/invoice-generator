@@ -38,6 +38,9 @@ router.post(
     hasRole([Role.Superadmin, Role.Admin]),
     async (req, res) => {
         const user = new User(req.body);
+        if (user.role !== Role.Superadmin && user.role !== Role.Admin && user.role !== Role.Cashier){
+            responseHandler(req, res, 400, `${user.role} is not a valid role`);
+        }
         try {
             if (
                 user.role === Role.Superadmin ||

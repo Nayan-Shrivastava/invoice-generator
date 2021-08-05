@@ -9,7 +9,7 @@ const hasRole = (roles = []) => {
     }
 
     return (req, res, next) => {
-        if (roles.length && !roles.includes(req.user.role)) {
+        if (roles.length !== 0 && !roles.includes(req.user.role)) {
             // user's role is not authorized
             responseHandler(req, res, 401);
         }
